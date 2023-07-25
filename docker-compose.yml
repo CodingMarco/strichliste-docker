@@ -4,7 +4,7 @@ services:
     strichliste:
         build:
             context: .
-            dockerfile: ./docker/Dockerfile
+            dockerfile: ./Dockerfile
         # if you use traefik you can remove the ports section
         ports:
             - 8080:8080
