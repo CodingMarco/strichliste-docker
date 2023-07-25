@@ -30,7 +30,7 @@ services:
         #     - "traefik.enable=true"
         #     - "traefik.port=8080"
     strichliste_db:
-        image: mariadb:10.4.6
+        image: mariadb:11.0.2
         restart: always
         networks:
             - db_net
