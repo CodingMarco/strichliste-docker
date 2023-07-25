@@ -1,8 +1,5 @@
 version: "2"
 
-networks:
-    db_net:
-        external: false
 services:
     strichliste:
         build:
@@ -41,3 +38,7 @@ services:
             - docker.env
         volumes:
             - ./data/mysql:/var/lib/mysql
+
+
+networks:
+    db_net:
