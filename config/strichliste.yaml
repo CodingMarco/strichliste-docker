@@ -25,6 +25,9 @@ parameters:
 
         # Be aware: All amounts are in cents!
         payment:
+            splitInvoice:
+                enabled: false
+
             undo:
                 enabled: true
                 delete: false

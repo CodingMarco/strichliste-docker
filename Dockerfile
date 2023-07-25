@@ -1,4 +1,4 @@
-FROM php:8.2-fpm-alpine
+FROM php:7.1-fpm-alpine
 
 RUN apk --no-cache add ca-certificates \
   && apk --no-cache add \
@@ -13,7 +13,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 RUN mkdir /source
 WORKDIR /source
-RUN curl -Lo strichliste.tar.gz https://github.com/strichliste/strichliste/releases/download/v1.8.2/strichliste-v1.8.2.tar.gz
+RUN curl -Lo strichliste.tar.gz https://github.com/strichliste/strichliste/releases/download/v1.7.1/strichliste.tar.gz
 RUN tar -xf strichliste.tar.gz
 RUN rm -f strichliste.tar.gz
 
@@ -21,6 +21,7 @@ COPY ./entrypoint.sh /source/entrypoint.sh
 RUN chmod +x /source/entrypoint.sh
 
 RUN chown -R www-data:www-data /source
+RUN chown -R www-data:www-data /var/tmp/nginx
 RUN chown -R www-data:www-data /var/lib/nginx
 RUN chown -R www-data:www-data /var/log/nginx
 RUN chown -R www-data:www-data /usr/local/var/log
