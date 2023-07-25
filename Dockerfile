@@ -34,7 +34,7 @@ RUN apk --no-cache add ca-certificates \
 
 COPY --from=release /source source
 
-COPY /docker/entrypoint.sh /source/entrypoint.sh
+COPY ./entrypoint.sh /source/entrypoint.sh
 RUN chmod +x /source/entrypoint.sh
 
 RUN adduser -u 82 -D -S -G www-data www-data
